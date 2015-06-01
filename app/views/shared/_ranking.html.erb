@@ -1,0 +1,8 @@
+<tr>
+ 	<td class="text-center vert-align"><%= ranking.rank+1 %></td>
+	<td><%= link_to image_tag(ranking.app.imageurl, alt: "App Icon"), rankings_app_path(ranking.app_id) %></td>
+	<td class="vert-align"><%= link_to "#{App.find(ranking.app_id).name}", rankings_app_path(ranking.app_id) %></td>
+	<td class="text-center vert-align"><%= ranking.change24hr %></td>
+	<td class="text-center vert-align"><%= ranking.change12hr %></td>
+	<td class="text-center vert-align"><%= link_to("View in iTunes", ranking.app.itunes_link, class: "orange-link") %></td>
+</tr>

@@ -1,0 +1,15 @@
+<% provide(:title, "Edit user") %>
+
+<div class="jumbotron">
+  <h1 class="center">Update your profile</h1>
+
+  <h4 class="center">Account type: <%= @user.usertype %></h4>
+  
+  <%= form_for(@user) do |f| %>
+    <%= render 'fields', f: f %>
+    <%= f.submit "Save changes", class: "btn btn-large btn-primary btn-orange" %>
+  <% end %>
+
+  <%= gravatar_for @user %>
+  <a href="http://gravatar.com/emails" target="_blank">Change profile photo</a>
+</div>

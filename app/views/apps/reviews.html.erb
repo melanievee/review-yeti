@@ -1,0 +1,38 @@
+<% provide(:title, "#{@app.name} Reviews") %>
+<div class="jumbotron">
+	<h1 class="center"><%= @app.name %> Reviews</h1>
+	<% if @app.rankings.any? %>
+		<div class="text-center">
+			<%= link_to "See this App's Rankings", rankings_app_path(@app), class: "btn btn-sm btn-primary btn-orange" %>
+		</div>
+	<% end %>
+	<% if @app.last_scraped.nil? %>
+		<%= render partial: 'shared/not_scraped_text', locals: { app: @app } %>
+	<% else %>
+		<h4 class="center">Last update: <%= @app.last_scraped.localtime.strftime("%B %d, %Y at %H:%M:%S") %></h4>
+		<% if @reviews.any? | !params[:q].nil? %>
+			<%= render partial: 'shared/wordcloud', locals: { word_array: @word_array } %>
+			<%= render partial: 'shared/review_search', locals: { app: @app, search: @search, store: @store, version: @version } %>
+
+			<%= will_paginate @reviews_paginated, :param_name => 'review_page' %>
+			<div>Sort Reviews by: 
+				<%= sort_link(@search, :rating, "Rating", url: reviews_app_path, id: @app.id) %>
+				<%= sort_link(@search, :version, "Version", url: reviews_app_path, id: @app.id) %>
+			</div>
+
+	  	<ol class="reviews">
+	    	<%= render partial: 'shared/review', collection: @reviews_paginated %>
+	  	</ol>
+
+	  	<% if !@reviews.any? %>
+	  		<ul><li>Oops! Looks like your search is too specific to find any reviews. Try making your search more broad.</li></ul>
+	  	<% end %>
+
+	  	<%= will_paginate @reviews_paginated, :param_name => 'review_page' %>
+
+		<% else %>
+			<ul><li>This app does not currently have any reviews</li></ul>
+		<% end %>
+	<% end %>
+</div>
+

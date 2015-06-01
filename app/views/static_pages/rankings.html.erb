@@ -1,0 +1,22 @@
+<% provide(:title, 'Rankings') %>
+
+<div class="jumbotron rankings-jumbotron">
+	<h1 class="center">iOS Application Rankings</h1>
+
+	<%= render 'shared/ranking_filters' %>
+
+ 	<div id="myTabContent" class="tab-content">
+		<div class="tab-pane fade in active" id="US">	
+			<%= render 'shared/rankings', rankings: @rankings_us %>
+	  </div>
+	  <div class="tab-pane fade" id="CA">	
+	  	<%= render 'shared/rankings', rankings: @rankings_ca %>
+	  </div>
+	  <div class="tab-pane fade" id="UK">
+	  	<%= render 'shared/rankings', rankings: @rankings_uk %>
+	  </div>
+	  <div class="tab-pane fade" id="AU">
+	  	<%= render 'shared/rankings', rankings: @rankings_au %>
+	  </div>
+	</div> 
+</div>

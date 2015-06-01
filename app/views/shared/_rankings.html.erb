@@ -1,0 +1,26 @@
+<% if rankings.any? %>
+	<h3 class="center"><%= @ranking_list_print %></h3>
+	<h4 class="center">Last update: <%= rankings.first.pulldate.getlocal.strftime("%B %d, %Y, %T") %></h4>
+	<table style="width:90%" align="center" class="table">
+		<col><col><col width="50%"><col><col><col width="15%">
+		<tr>
+			<th class="text-center vert-align">Rank</th>
+			<th></th>
+			<th class="text-center vert-align">App</th>
+			<th class="text-center vert-align">24-hour Change</th>
+			<th class="text-center vert-align">12-hour Change</th>
+			<th></th>
+		</tr>
+		<% if current_user.nil? %>
+  		<%= render partial: 'shared/ranking', collection: rankings.order('rank ASC').limit(5) %>
+  	<% else %>
+  		<%= render partial: 'shared/ranking', collection: rankings.order('rank ASC') %>
+		<% end %>
+	</table>
+	<% if current_user.nil? %>
+		<h4 class="center"><em>Please <%= link_to "sign in", signin_path %> or 
+											 <%= link_to "sign up", signup_path, class: "orange" %> to view more rankings.</em></h4>
+	<% end %>
+<% else %>
+	<%= render 'shared/norankings' %>
+<% end %>

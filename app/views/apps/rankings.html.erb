@@ -1,0 +1,21 @@
+<% provide(:title, "#{@app.name} Rankings") %>
+<div class="jumbotron">
+	<h1 class="center"><%= @app.name %> Rankings</h1>
+	<% if current_user.following?(@app) %>
+		<div class="text-center">
+			<%= link_to "See this App's Reviews", reviews_app_path(@app), class: "btn btn-sm btn-primary btn-orange" %>
+		</div>
+	<% else %>
+		<h4 class="center"><%= link_to "Follow this app", {:controller => 'relationships', 
+																											 :action => 'create', 
+																											 :followedapp_id => @app.id}, 
+																											 :method => :post,
+																											 class: "orange-link" %> to see its reviews.</h4>
+	<% end %>
+	<% if @app.rankings.any? %>
+		<h4 class="center">Last update: <%= @rankings.first.pulldate.localtime.strftime("%B %d, %Y at %H:%M:%S") %></h4>
+		<%= render partial: 'shared/ranking_chart' %>
+	<% else %>
+		<h4 class="center"><br>Looks like this app isn't currently ranked.  If you think this is an error, please let us know!</h4>
+	<% end %>
+</div>

@@ -1,0 +1,56 @@
+<div class="row">
+<div class="col-xs-5">
+	<div class="dropdown pull-left">
+	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+	    <%= @category_print %>
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+	    <li role="presentation"><%= link_to "Top Free", rankings_path(category: "topfree", genre: @genre), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Top Paid", rankings_path(category: "toppaid", genre: @genre), {role: "menuitem", tabindex: "-1"} %></li>
+<!-- 	    <li role="presentation"><%= link_to "Top Grossing", rankings_path(category: "topgrossing", genre: @genre), {role: "menuitem", tabindex: "-1"} %></li> -->
+	  </ul>
+	</div>
+  <div class="dropdown pull-left">
+	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">
+	    <%= @genre_print %>
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+	    <li role="presentation"><%= link_to "All", rankings_path(category: @category, genre: nil), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Books", rankings_path(category: @category, genre: "books"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Business", rankings_path(category: @category, genre: "business"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Catalogs", rankings_path(category: @category, genre: "catalogs"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Education", rankings_path(category: @category, genre: "education"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Entertainment", rankings_path(category: @category, genre: "entertainment"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Finance", rankings_path(category: @category, genre: "finance"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Food", rankings_path(category: @category, genre: "food"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Games", rankings_path(category: @category, genre: "games"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Health", rankings_path(category: @category, genre: "health"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Lifestyle", rankings_path(category: @category, genre: "lifestyle"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Medical", rankings_path(category: @category, genre: "medical"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Music", rankings_path(category: @category, genre: "music"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Navigation", rankings_path(category: @category, genre: "navigation"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "News", rankings_path(category: @category, genre: "news"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Newsstand", rankings_path(category: @category, genre: "newsstand"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Photo/Video", rankings_path(category: @category, genre: "photovideo"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Productivity", rankings_path(category: @category, genre: "productivity"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Reference", rankings_path(category: @category, genre: "reference"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Social", rankings_path(category: @category, genre: "social"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Sports", rankings_path(category: @category, genre: "sports"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Travel", rankings_path(category: @category, genre: "travel"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Utilities", rankings_path(category: @category, genre: "utilities"), {role: "menuitem", tabindex: "-1"} %></li>
+	    <li role="presentation"><%= link_to "Weather", rankings_path(category: @category, genre: "weather"), {role: "menuitem", tabindex: "-1"} %></li>
+	  </ul>
+	</div>
+</div>
+
+<div class="col-xs-7">
+	<ul class="nav nav-pills nav-pills-right" role="tablist">
+	  <li class="active"><a href="#US" data-toggle="tab">US</a></li>
+	  <li><a href="#CA" data-toggle="tab">Canada</a></li>
+	  <li><a href="#UK" data-toggle="tab">United Kingdom</a></li>
+	  <li><a href="#AU" data-toggle="tab">Australia</a></li>
+	</ul>
+</div>
+</div>

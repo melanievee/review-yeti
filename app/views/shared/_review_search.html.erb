@@ -1,0 +1,25 @@
+<%= search_form_for search, url: reviews_app_path, id: app.id, :html => {:class => "form-horizontal"} do |f| %>
+  <div class="form-group form-group-sm form-compressed">
+    <%= f.label :content_cont, "Review contains", :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10"><%= f.text_field :content_cont %></div>
+  </div>
+  <div class="form-group form-group-sm form-compressed">
+    <%= f.label :store_eq, "iTunes Store", :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10"><%= f.select :store_eq, store, :include_blank => true %></div>
+  </div>
+  <div class="form-group form-group-sm form-compressed">
+    <%= f.label :store_eq, "App Version", :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10"><%= f.select :version_eq, version, :include_blank => true %></div>
+  </div>
+  <div class="form-group form-group-sm form-compressed">
+    <%= f.label :rating_gteq, "Rating between", :class => "col-sm-2 control-label" %>
+    <div class="col-sm-1"><%= f.select :rating_gteq, (1..5) %></div>
+	  <div class="col-sm-1"><%= f.label  :rating_lteq, "and" %></div>
+	  <div class="col-sm-1"><%= f.select :rating_lteq, (1..5), :selected => 5 %></div>
+  </div>
+  <div class="row">
+  	<div class="col-sm-2"></div>
+  	<div class="actions col-sm-4"><%= f.submit "Search" %></div>
+  	<%= link_to "Reset Search", reviews_app_path, id: app.id %>
+	</div>
+<% end %>

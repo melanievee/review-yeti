@@ -1,0 +1,30 @@
+ <li class="review-card">
+  <div class="row card-header">
+    <div class="col-md-8 review-title">
+      <%= review.title %>
+    </div>
+    <div class="col-md-4 review-rating text-right">
+      <% review.rating.times do |rating| %>
+        <%= image_tag('star_full.png', class: "review-star") %>
+      <% end %>
+      <% (5-review.rating).times do |rating| %>
+        <%= image_tag('star_empty.png', class: "review-star") %>
+      <% end %>
+    </div>
+  </div>
+  <div class="review-author">
+    <%= review.author %>
+  </div>
+  <div class="review-content">
+    <%= review.content %>
+  </div>
+  <div class="card-footer">
+    <div class="review-store">
+      iTunes Store: <%= review.store %>
+    </div>
+    <div>
+      <span class="review-version text-left">App Version: <%= review.version %></span>
+      <span class="review-date text-right pull-right">Date: <%= review.updated.strftime("%B %d, %Y") %></span>
+    </div>
+  </div>
+</li>

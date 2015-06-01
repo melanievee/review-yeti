@@ -1,0 +1,33 @@
+<% provide(:title, 'Profile') %>
+<div class="jumbotron">
+	
+	<div id="profile" class="row">
+		<div class="col-sm-3 profile-sidebar">
+			<section class="profile">
+				<%= gravatar_for @user, size: 120 %>
+				<h4><%= @user.name %></h4>
+				<p><%= @user.usertype.capitalize %> User</p>
+			</section>
+			
+			<h3>Add more apps!</h3>
+			<%= form_for(:app, url: apps_path) do |f| %>
+				<%= f.label :itunesid, "Enter iTunes ID:" %>
+				<%= f.number_field :itunesid %>
+
+				<%= f.submit "Add App", class: "btn btn-large btn-primary btn-orange" %>
+			<% end %>
+		</div>
+
+		<div class="col-sm-9">		
+			<h3 class="text-center followed-header">Followed Apps</h3>
+			<% if @apps.any? %>
+	      <table class="app_table">
+	        <%= render partial: 'shared/app', collection: @apps %>
+	      </table>
+		  <% else %>
+		  	<p>You are not currently following any apps.</p>
+		  <% end %>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,5 @@
+<tr class="followed-app">
+	<td class="app-icon"><%= link_to image_tag(app.imageurl, alt: "App Icon"), reviews_app_path(app) %></td>
+	<td class="app-name"><%= link_to app.name, reviews_app_path(app) %></td>
+	<td><%= link_to "Unfollow", current_user.relationships.find_by(followedapp_id: app.id), method: :delete, data: { confirm: "Are you sure?" }, class: "app-delete pull-right" %></td>
+</tr>

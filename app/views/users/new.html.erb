@@ -1,0 +1,12 @@
+<% provide(:title, 'Sign up') %>
+
+<div class="jumbotron">
+	<h1 class="center">Sign up</h1>
+
+  <%= form_for(@user) do |f| %>
+    <%= render 'fields', f: f %>
+    <p></p>
+    <%= f.submit "Create my account", class: "btn btn-large btn-primary btn-orange" %>
+  <% end %>
+
+</div>

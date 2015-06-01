@@ -1,0 +1,434 @@
+@import "twitter/bootstrap/bootstrap";
+body { padding-top: 110px; padding-bottom: 70px; }
+
+// Set the correct sprite paths
+@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: font-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: font-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: font-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: font-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: font-url("fontawesome-webfont.svg#fontawesomeregular");
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+@import url(//fonts.googleapis.com/css?family=Raleway:300,500);
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+@import url(//fonts.googleapis.com/css?family=Roboto);
+@import url(//fonts.googleapis.com/css?family=Anton);
+
+// Style Components
+@yeti-blue: #7FCBD0;
+@yeti-orange: #D9670F;
+@yeti-orange-hover: #DF7E33;
+@yeti-gray: #313447;
+@body-bg: @yeti-blue;
+@text-color: @yeti-gray;
+@headings-font-weight: 200;
+@font-family-base: "Roboto";
+@component-active-bg: @yeti-orange;
+
+
+/* Reviews Styling */
+#wordcloud {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  width: 550px;
+  height: 350px;
+}
+
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.reviews {
+  margin-top: 20px;
+
+  list-style-type: none;
+  // padding: 0px 20px;
+  padding-left: 0px;
+}
+
+li.review-card {
+  // font-family: @font-family-base;
+  background-color: white;
+
+  .border-radius(8px);
+
+  margin: 20px 0px;
+  padding: 10px 25px;
+
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+
+  .review-title {
+    font-size: 18px;
+  }
+
+  .review-author {
+    font-size: 12px;
+    // margin-top: 3px;
+  }
+
+  .review-content {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .card-footer {
+    font-size: 12px;
+  }
+
+  .review-star {
+    margin-left: 5px;
+  }
+}
+
+/* Rankings Styling */
+
+.nav-pills-right > li {
+    float:right;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-pills-right {
+    text-align:center;
+}
+
+.jumbotron.rankings-jumbotron {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/* Navigation Styling / Header */
+
+.main-nav {
+	float: right;
+}
+
+.main-nav ul li a {
+  padding: 30px 10px;
+  border-top: 4px solid transparent;
+  font-size: 1.2em;
+  font-weight: 200;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: @yeti-gray;
+}
+
+.navbar-default .navbar-nav > li:hover > a {
+  color: @yeti-orange;
+}
+
+.navbar-header {
+	padding-top: 20px;
+	font-family: "Anton";
+	font-size: 25px;
+	letter-spacing: 1px;
+}
+
+.navbar-default li {
+  a.orange {
+    color: @yeti-orange;
+  }
+  a.orange:hover {
+    color: @yeti-blue;
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+
+/* landing page & signed-out styling */
+
+body.photo {
+  background-image: image-url('iPhone_closeup.jpeg');
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.container .landing h1, .container .landing h2, .container .landing h3, .container .landing h4, .container .landing a {
+  color: white;
+}
+
+.container h3.orange {
+  color: @yeti-orange;
+}
+
+.navbar-default.landing-header {
+  background-color: white;
+  a#logo {
+    color: @yeti-orange;
+  }
+  a#logo:hover {
+    color: @yeti-blue;
+    text-decoration: none;
+  }
+}
+
+.landing .btn-primary {
+  color: #ffffff;
+  background-color: @yeti-orange;
+  background-image: none;
+  margin-top: 50px;
+  padding: 26px 50px;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.landing .btn-primary:hover,
+.landing .btn-primary:focus,
+.landing .btn-primary:active,
+.landing .btn-primary.active,
+.landing .open .dropdown-toggle.btn-primary {
+  color: #ffffff;
+  background-color: @yeti-orange-hover;
+}
+
+
+/* footer section */
+
+footer {
+  padding: 12px 0;
+  background-color: white;
+  text-align: right;
+  font-size: 13px;
+}
+
+footer .AP a {
+	color: @yeti-orange;
+}
+
+
+/* body */
+
+h1 {
+	padding-bottom: 10px;
+}
+
+.jumbotron h1 {
+  font-size: 48px;
+}
+
+.container, .container h1, .container h2, .container h3, .container h4, .container li, .container a {
+  color: @yeti-gray;
+}
+
+.btn-orange {
+  color: #ffffff !important;
+  background-color: @yeti-orange;
+  background-image: none;
+  border: none;
+  white-space: normal;
+  text-decoration: none !important;
+}
+
+.btn-orange:hover,
+.btn-orange:focus,
+.btn-orange:active,
+.btn-orange.active,
+.open .dropdown-toggle.btn-orange {
+  color: #ffffff;
+  background-color: @yeti-orange-hover;
+}
+
+.center .btn-primary {
+  color: #ffffff;
+  background-color: @yeti-orange;
+  background-image: none;
+}
+
+.center .btn-primary:hover,
+.center .btn-primary:focus,
+.center .btn-primary:active,
+.center .btn-primary.active,
+.center .open .dropdown-toggle.btn-primary {
+  color: #ffffff;
+  background-color: @yeti-orange-hover;
+}
+
+.container a:hover {
+	color:@yeti-orange;
+	text-decoration: none;
+}
+
+a.orange-link {
+  color: @yeti-orange;
+}
+
+a.orange-link:hover {
+  color: @yeti-blue;
+}
+
+.jumbotron h1, .jumbotron h2, .jumbotron h3, .jumbotron h4, .jumbotron li {
+  font-family: "Open Sans";
+  font-weight: 300;
+  color: @yeti-gray;
+}
+
+ol {
+  padding-left: 32px;
+}
+
+.center {
+  text-align: center;
+}
+
+.navbar-default {
+  background-color: white;
+}
+
+
+/* Rankings Charts */
+
+.morris-hover {
+  position:absolute;z-index:1000;
+  color: #000000;
+}
+
+svg {
+    width: 100% !important;
+    padding-bottom: 100px;
+}
+
+/* Profile Page */
+
+.profile {
+  .gravatar {
+    .border-radius(5px);
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+
+  padding-bottom: 20px;
+  // margin-bottom: 15px;
+  border-bottom: 1px solid lightgray;
+}
+
+.profile-sidebar
+{
+  h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+}
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.followed-app {
+  .app-name {
+    font-size: 16px;
+  }
+  .app-icon {
+    align: center;
+  }
+
+  padding-bottom: 40px;
+  border-bottom: 1px solid lightgray;
+}
+
+.app_table {
+  width: 100%;
+}
+
+
+/* forms */
+
+.form-compressed {
+  margin-bottom: 0px;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #f00;
+  font-size: 16px;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.checkbox {
+  margin-left: 17px;
+  margin-bottom: 10px;
+  margin-top: -5px;
+  span {
+    margin-left: 5px;
+    font-weight: normal;
+  }
+}
+
+.app_table {
+  margin-bottom: 10px;
+  td {
+    padding: 10px;
+  }
+}
+
+.rank_table {
+  margin-bottom: 10px;
+  td, th {
+    padding: 10px;
+    border: 1px solid gray;
+  }
+}
+
+.table tbody>tr>td.vert-align{
+    vertical-align: middle;
+}
+.table tbody>tr>th.vert-align{
+    vertical-align: middle;
+}
+
+.gravatar {
+  margin-top: 10px;
+}

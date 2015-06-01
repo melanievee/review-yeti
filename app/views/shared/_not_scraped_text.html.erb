@@ -1,0 +1,9 @@
+<% if app.followers.any? %>
+	<h4 class="center">Our Yetis are running around like crazy plucking this app's reviews from the iTunes store!  They will be available soon.  Thanks for your patience!</h4>
+<% else %>
+	<h4 class="center">Looks like you're trying to see reviews for an App you don't follow.  In order to see reviews, please <%= link_to "follow this app!", {:controller => 'relationships', 
+																									 :action => 'create', 
+																									 :followedapp_id => app.id}, 
+																									 :method => :post,
+																									 class: "orange-link" %></h4>
+<% end %>

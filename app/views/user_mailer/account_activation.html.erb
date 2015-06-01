@@ -1,0 +1,7 @@
+<h1>Welcome to Review Yeti!</h1>
+
+<p>Howdy <%= @user.name %>,</p>
+
+<p>Welcome to Review Yeti! Please click on the following link to complete your account activation:</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>

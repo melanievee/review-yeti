@@ -1,0 +1,31 @@
+<div id="monitor" class="panel panel-default tab-box">
+	<div class="panel-heading">
+    <ul class="nav nav-tabs" role="tablist">
+    	<li class="active"><a href="#US" data-toggle="tab" data-identifier="usline">United States</a></li>
+    	<li><a href="#AU" data-toggle="tab" data-identifier="auline">Australia</a></li>
+    	<li><a href="#CA" data-toggle="tab" data-identifier="caline">Canada</a></li>
+    	<li><a href="#UK" data-toggle="tab" data-identifier="ukline">United Kingdom</a></li>
+  	</ul>
+	</div>
+	<div class="panel-body">
+		<div class="tab-content">
+			<div id="US" class="tab-pane fade in active">
+        <h3 class="center">United States Rankings</h3>
+        <%= content_tag :div, "", id: "us_rankings_chart", data: {rankings: Ranking.new_chart_data(@app, "United States")} %>
+      </div>
+      <div id="AU" class="tab-pane fade">
+        <h3 class="center">Australia Rankings</h3>
+        <%= content_tag :div, "", id: "au_rankings_chart", data: {rankings: Ranking.new_chart_data(@app, "Australia")} %>
+      </div>
+      <div id="CA" class="tab-pane fade">
+        <h3 class="center">Canada Rankings</h3>
+        <%= content_tag :div, "", id: "ca_rankings_chart", data: {rankings: Ranking.new_chart_data(@app, "Canada")} %>
+      </div>
+      <div id="UK" class="tab-pane fade">
+        <h3 class="center">United Kingdom Rankings</h3>
+        <%= content_tag :div, "", id: "uk_rankings_chart", data: {rankings: Ranking.new_chart_data(@app, "United Kingdom")} %>
+      </div>
+    </div>
+	</div>
+</div>
+<br>
